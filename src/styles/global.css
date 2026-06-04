@@ -246,6 +246,49 @@ main {
   padding: clamp(1.5rem, 4vw, 3rem);
 }
 
+.terrain-mark {
+  display: block;
+  width: min(100%, 420px);
+  margin: 0 0 2rem auto;
+  color: var(--gold-bright);
+  opacity: 0.74;
+}
+
+.terrain-line,
+.tree {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.terrain-line {
+  stroke-width: 2;
+}
+
+.ridge-back {
+  opacity: 0.26;
+}
+
+.ridge-front {
+  opacity: 0.5;
+}
+
+.ground {
+  opacity: 0.34;
+}
+
+.tree {
+  stroke-width: 2.25;
+  opacity: 0.7;
+}
+
+.tree-a,
+.tree-c {
+  color: var(--green-bright);
+}
+
 .metric-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
