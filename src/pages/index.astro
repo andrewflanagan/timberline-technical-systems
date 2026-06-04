@@ -193,7 +193,19 @@ const approach = [
           return;
         }
 
-        statusEl.textContent = 'Something went wrong. Please email hello@timberlinetechnicalsystems.com.';
+        let errorMessage = 'Something went wrong. Please email hello@timberlinetechnicalsystems.com.';
+
+        try {
+          const result = await response.json();
+
+          if (typeof result.error === 'string' && result.error) {
+            errorMessage = `${result.error} Please email hello@timberlinetechnicalsystems.com.`;
+          }
+        } catch {
+          // Keep the fallback message when the server does not return JSON.
+        }
+
+        statusEl.textContent = errorMessage;
         statusEl.className = 'form-status error';
       } catch {
         statusEl.textContent = 'Could not send right now. Please email hello@timberlinetechnicalsystems.com.';
