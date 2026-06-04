@@ -113,6 +113,8 @@ It uses Resend and expects this environment variable at runtime:
 RESEND_API_KEY
 ```
 
+The contact endpoint reads this from Cloudflare's runtime environment via the Astro Cloudflare adapter, with a local `import.meta.env` fallback for development.
+
 Current email behavior:
 
 - Sends from: `Timberline Contact <hello@timberlinecodeforge.com>`

@@ -1,6 +1,7 @@
 export const prerender = false;
 
 import type { APIRoute } from 'astro';
+import type { Runtime } from '@astrojs/cloudflare';
 import { Resend } from 'resend';
 
 const TO_EMAIL = 'hello@timberlinetechnicalsystems.com';
@@ -8,8 +9,13 @@ const FROM_EMAIL = 'Timberline Contact <hello@timberlinecodeforge.com>';
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export const POST: APIRoute = async ({ request }) => {
-  const apiKey = import.meta.env.RESEND_API_KEY;
+type CloudflareEnv = Runtime<{
+  RESEND_API_KEY?: string;
+}>;
+
+export const POST: APIRoute = async ({ request, locals }) => {
+  const runtime = locals as CloudflareEnv;
+  const apiKey = runtime.runtime?.env.RESEND_API_KEY ?? import.meta.env.RESEND_API_KEY;
 
   if (!apiKey) {
     console.error('Missing RESEND_API_KEY');
