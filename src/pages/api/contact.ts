@@ -4,7 +4,7 @@ import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
 
 const TO_EMAIL = 'hello@timberlinetechnicalsystems.com';
-const FROM_EMAIL = 'Timberline Contact <contact@timberlinetechnicalsystems.com>';
+const FROM_EMAIL = 'Timberline Contact <hello@timberlinecodeforge.com>';
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
