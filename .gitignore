@@ -8,6 +8,7 @@ dist/
 # Build and tool caches
 .vite/
 .cache/
+.wrangler/
 coverage/
 
 # Environment files
