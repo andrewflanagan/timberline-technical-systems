@@ -1,0 +1,152 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const services = [
+  {
+    title: 'Technical System Architecture',
+    body: 'Clear boundaries, boring interfaces, and deployment shapes that make sense before the system is in pieces on a bench.',
+    points: ['Platform decomposition', 'Interface contracts', 'Integration plans'],
+  },
+  {
+    title: 'Embedded & Edge Software',
+    body: 'Software close to the hardware: services, adapters, diagnostics, and control surfaces that survive real operating conditions.',
+    points: ['Linux edge devices', 'C / C++ / Rust', 'Telemetry & diagnostics'],
+  },
+  {
+    title: 'Autonomy & Mission Logic',
+    body: 'Behavior orchestration, state machines, autonomy hooks, and testable logic for systems with movement, constraints, and consequences.',
+    points: ['Mission flows', 'State machines', 'Simulation harnesses'],
+  },
+  {
+    title: 'Build, Release & Field Readiness',
+    body: 'Practical pipelines, release evidence, and operational feedback loops for teams tired of discovering risk through interpretive smoke signals.',
+    points: ['CI/CD', 'Artifact discipline', 'Readiness checks'],
+  },
+];
+
+const approach = [
+  ['01', 'Map the terrain', 'Understand the hardware, constraints, interfaces, team habits, and places where risk is quietly nesting.'],
+  ['02', 'Shape the system', 'Turn ambiguity into explicit boundaries, contracts, and decision records that humans can actually use.'],
+  ['03', 'Build the working slice', 'Deliver narrow, verifiable increments that prove the architecture with real integration, not slideware perfume.'],
+  ['04', 'Leave the trail marked', 'Hand off documentation, tests, release evidence, and operating notes so the system can keep moving.'],
+];
+---
+
+<SiteLayout>
+  <section class="hero section-pad">
+    <div class="hero-copy">
+      <p class="eyebrow">Technical systems, polished brighter</p>
+      <h1>Engineering help for software that touches hardware, risk, and reality.</h1>
+      <p class="hero-lede">
+        Timberline Technical Systems helps teams clarify, build, and harden the connective tissue between software, devices, data, and operations.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Start a project</a>
+        <a class="btn btn-secondary" href="#services">Explore services</a>
+      </div>
+    </div>
+
+    <aside class="hero-card" aria-label="Positioning summary">
+      <p class="card-kicker">Systems that behave</p>
+      <h2>From architecture fog to field-ready clarity.</h2>
+      <p>
+        Practical technical stewardship for complex software efforts: hardware-aware, operations-minded, and allergic to ceremonial complexity.
+      </p>
+      <div class="metric-row">
+        <span><strong>01</strong> clarify</span>
+        <span><strong>02</strong> integrate</span>
+        <span><strong>03</strong> sustain</span>
+      </div>
+    </aside>
+  </section>
+
+  <section class="section-pad intro-grid" aria-label="Core positioning">
+    <div>
+      <p class="eyebrow">Why this exists</p>
+      <h2>A shinier Timberline sibling, but with steel-toed boots.</h2>
+    </div>
+    <p>
+      This placeholder keeps the Timberline Code Forge feel: dark evergreen, serious system-software posture, Pacific Northwest restraint. Then it turns the lamp up with brass, gold, and amber accents for a brighter technical consultancy presence.
+    </p>
+  </section>
+
+  <section id="services" class="section-pad">
+    <div class="section-heading">
+      <p class="eyebrow">Services</p>
+      <h2>Useful where the diagrams meet the devices.</h2>
+    </div>
+    <div class="service-grid">
+      {services.map((service) => (
+        <article class="service-card">
+          <h3>{service.title}</h3>
+          <p>{service.body}</p>
+          <ul>
+            {service.points.map((point) => <li>{point}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="approach" class="section-pad approach-section">
+    <div class="section-heading narrow">
+      <p class="eyebrow">Approach</p>
+      <h2>Enough process to see clearly. Not enough to summon a committee hydra.</h2>
+    </div>
+    <div class="timeline">
+      {approach.map(([number, title, body]) => (
+        <article class="timeline-item">
+          <span>{number}</span>
+          <div>
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="fit" class="section-pad fit-section">
+    <div class="fit-panel">
+      <p class="eyebrow">Best fit</p>
+      <h2>Bring the messy middle.</h2>
+      <p>
+        The sweet spot is a system that already has real constraints: fielded hardware, tangled integration, unclear ownership, fragile release confidence, or software behavior that has become too implicit to reason about.
+      </p>
+      <div class="fit-list">
+        <span>Robotics & autonomy</span>
+        <span>Embedded platforms</span>
+        <span>Sensor pipelines</span>
+        <span>DevOps for field systems</span>
+        <span>Architecture recovery</span>
+        <span>Release readiness</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section-pad contact-section">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2>Tell us what needs to work.</h2>
+      <p>
+        Placeholder form for now. Wire this to your preferred static form provider, Cloudflare Worker endpoint, or good old-fashioned email once the domain lands.
+      </p>
+    </div>
+    <form class="contact-form" name="contact" method="post">
+      <label>
+        Name
+        <input name="name" type="text" autocomplete="name" />
+      </label>
+      <label>
+        Email
+        <input name="email" type="email" autocomplete="email" />
+      </label>
+      <label>
+        What are you building?
+        <textarea name="message" rows="5"></textarea>
+      </label>
+      <button class="btn btn-primary" type="submit">Send message</button>
+      <p class="form-note">Or email directly at <a href="mailto:hello@timberlinetechnicalsystems.com">hello@timberlinetechnicalsystems.com</a></p>
+    </form>
+  </section>
+</SiteLayout>

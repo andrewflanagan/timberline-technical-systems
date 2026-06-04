@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+
+# Astro generated files
+.astro/
+dist/
+
+# Build and tool caches
+.vite/
+.cache/
+coverage/
+
+# Environment files
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and local workspace files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.idea/
+
+# Package manager metadata
+.pnpm-store/
+.yarn/*
+!.yarn/releases/
+!.yarn/plugins/
+!.yarn/sdks/
+!.yarn/versions/
